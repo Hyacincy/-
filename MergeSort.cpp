@@ -6,13 +6,13 @@ void Merge(int A[],int l,int m,int r){
     int *C = new int[y];
     for(i=0,j=l;i<x;i++,j++){
     	B[i]=A[j];	
-	}
+    }
     for(i=0,j=m+1;i<y;i++,j++){
     	C[i]=A[j];
-	}
+    }
     i=0;
-	j=0;
-	k=l;
+    j=0;
+    k=l;
     while(i<x&&j<y){
         if(B[i]<=C[j]){
             A[k++]=B[i++];
@@ -23,18 +23,18 @@ void Merge(int A[],int l,int m,int r){
     }
     if(i>=x){
         while(j<y){
-        	A[k++]=C[j++];
-		}
+            A[k++]=C[j++];
+	}
     }
     else{
         while(i<x){
-        	A[k++]=B[i++];
-		}
+            A[k++]=B[i++];
+	}
     }
 }
 
 void MergeSort(int A[],int l,int r){
-	int m;
+    int m;
     if(l<r){
         m=(l+r)/2;
         MergeSort(A,l,m);
@@ -44,17 +44,17 @@ void MergeSort(int A[],int l,int r){
 }
 
 int main(){
-	int n,A[100],i;
-	printf("ÇëÊäÈë¹²ÓÐ¼¸¸öÊý£º");
-	scanf("%d",&n);
-	printf("ÇëÊäÈëÊý¾Ý£º\n");
-	for(i=0;i<n;i++){
-		scanf("%d",&A[i]);
-	}
-	MergeSort(A,0,n-1);
-	printf("ÅÅÁÐºóµÄÊý¾ÝÎª£º\n");
-	for(i=0;i<n;i++){
-		printf("%d ",A[i]);
-	}
-	return 0;
+    int n,A[100],i;
+    printf("è¯·è¾“å…¥å…±æœ‰å‡ ä¸ªæ•°ï¼š");
+    scanf("%d",&n);
+    printf("è¯·è¾“å…¥æ•°æ®ï¼š\n");
+    for(i=0;i<n;i++){
+	scanf("%d",&A[i]);
+    }
+    MergeSort(A,0,n-1);
+    printf("æŽ’åˆ—åŽçš„æ•°æ®ä¸ºï¼š\n");
+    for(i=0;i<n;i++){
+	printf("%d ",A[i]);
+    }
+    return 0;
 } 
