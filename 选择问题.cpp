@@ -8,7 +8,7 @@ int L[1001];
 int select(int left,int right,int k){
     if(left>=right){
     	return L[left];
-	}
+    }
     int x=L[left];
     int i=left;
     int j=right+1;
@@ -21,37 +21,37 @@ int select(int left,int right,int k){
         }while(L[j]>x);
         if(i>=j){
         	break;
-		}
+	}
         swap(L[i],L[j]);
     }
     if(j-left+1==k){
     	return x;
-	}
+    }
     L[left]=L[j];
     L[j]=x;
     if(j-left+1<k){
     	return select(j+1,right,k-j+left-1);
-	}
+    }
     else{
     	return select(left,j-1,k);
-	}
+    }
 }
 
 int main(){
     int n;
-    cout<<"ÇëÊäÈëÊı¾İµÄ¸öÊı£º";
+    cout<<"è¯·è¾“å…¥æ•°æ®çš„ä¸ªæ•°ï¼š";
     cin>>n;
     while(n){
         int k,i;
-        cout<<"ÇëÊäÈëÄãÒª²éÕÒµÄµÚkĞ¡µÄÊı×ÖµÄk£º";
+        cout<<"è¯·è¾“å…¥ä½ è¦æŸ¥æ‰¾çš„ç¬¬kå°çš„æ•°å­—çš„kï¼š";
         cin>>k;
-        cout<<"ÇëÊäÈë"<<n<<"¸öÊı¾İ:"<<endl;
+        cout<<"è¯·è¾“å…¥"<<n<<"ä¸ªæ•°æ®:"<<endl;
         for(i=0;i<n;i++){
         	cin>>L[i];
-		}
-    	cout<<"µÚkĞ¡µÄÊı×ÖÎª£º";
+	}
+    	cout<<"ç¬¬kå°çš„æ•°å­—ä¸ºï¼š";
         cout<<select(0,n-1,k)<<endl<<endl;
-        cout<<"ÇëÊäÈëÊı¾İµÄ¸öÊı£º";
+        cout<<"è¯·è¾“å…¥æ•°æ®çš„ä¸ªæ•°ï¼š";
     	cin>>n;
     }
     return 0;
