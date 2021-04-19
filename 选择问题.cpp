@@ -20,7 +20,7 @@ int select(int left,int right,int k){
             j--;
         }while(L[j]>x);
         if(i>=j){
-        	break;
+            break;
 	}
         swap(L[i],L[j]);
     }
@@ -47,7 +47,7 @@ int main(){
         cin>>k;
         cout<<"请输入"<<n<<"个数据:"<<endl;
         for(i=0;i<n;i++){
-        	cin>>L[i];
+            cin>>L[i];
 	}
     	cout<<"第k小的数字为：";
         cout<<select(0,n-1,k)<<endl<<endl;
