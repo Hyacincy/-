@@ -6,11 +6,11 @@ int m[101][101];
 int s[101][101];
  
 void optimal_matrix_chain(int p[], int n){
-	int i,r,j,k,t; 
+    int i,r,j,k,t; 
 	
     for(i=1;i<=n;i++){
     	m[i][i]=0;
-	}
+    }
     for(r=2;r<=n;r++){
         for(i=1;i<=n-r+1;i++){
             j=i+r-1;
@@ -30,7 +30,7 @@ void optimal_matrix_chain(int p[], int n){
 void print_order(int i,int j){
     if(i == j){
         printf("A%d",i);    	
-	}
+    }
     else{
         printf("(");
         print_order(i,s[i][j]);
@@ -43,15 +43,15 @@ int main(){
     int p[100];
     int i,j,k,n,a;
     
-    printf("ÇëÊäÈëÓÐ¼¸¸ö¾ØÕó£º");
-	scanf("%d",&n);
-	printf("ÇëÊäÈëÏòÁ¿P£¬È·¶¨Ã¿¸ö¾ØÕó´óÐ¡£º\n");
-	for(a=0;a<=n;a++){
-		scanf("%d",&p[a]);
-	}
+    printf("è¯·è¾“å…¥æœ‰å‡ ä¸ªçŸ©é˜µï¼š");
+    scanf("%d",&n);
+    printf("è¯·è¾“å…¥å‘é‡Pï¼Œç¡®å®šæ¯ä¸ªçŸ©é˜µå¤§å°ï¼š\n");
+    for(a=0;a<=n;a++){
+	scanf("%d",&p[a]);
+    }
     optimal_matrix_chain(p,n);
-    printf("\nÔËËã×îÐ¡´ÎÊýÎª£º%d\n",m[1][n]);
-    printf("×îÓÅ³Ë·¨´ÎÐòÎª£º");
+    printf("\nè¿ç®—æœ€å°æ¬¡æ•°ä¸ºï¼š%d\n",m[1][n]);
+    printf("æœ€ä¼˜ä¹˜æ³•æ¬¡åºä¸ºï¼š");
     print_order(1,n);
     return 0;
 }
