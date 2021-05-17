@@ -10,10 +10,10 @@ void Merge(int A[],int l,int m,int r){
     int *C = new int[y];
     for(i=0,j=l;i<x;i++,j++){
     	B[i]=A[j];	
-	}
+    }
     for(i=0,j=m+1;i<y;i++,j++){
     	C[i]=A[j];
-	}
+    }
     i=0;
 	j=0;
 	k=l;
@@ -27,18 +27,18 @@ void Merge(int A[],int l,int m,int r){
     }
     if(i>=x){
         while(j<y){
-        	A[k++]=C[j++];
-		}
+            A[k++]=C[j++];
+	}
     }
     else{
         while(i<x){
-        	A[k++]=B[i++];
-		}
+            A[k++]=B[i++];
+	}
     }
 }
 
 void MergeSort(int A[],int l,int r){
-	int m;
+    int m;
     if(l<r){
         m=(l+r)/2;
         MergeSort(A,l,m);
@@ -46,29 +46,30 @@ void MergeSort(int A[],int l,int r){
         Merge(A,l,m,r);
     }
 }
+
 int main(){
 	int n,C,i,j=0,W[100],t=0;
-	cout<<"ÇëÊäÈëÂÖ´¬µÄ×î´óÔØÖØÁ¿£º";
+	cout<<"è¯·è¾“å…¥è½®èˆ¹çš„æœ€å¤§è½½é‡é‡ï¼š";
 	cin>>C;
-	cout<<"ÇëÊäÈë¼¯×°Ïä¸öÊı£º";
+	cout<<"è¯·è¾“å…¥é›†è£…ç®±ä¸ªæ•°ï¼š";
 	cin>>n;
 	
-	cout<<"ÇëÒÀ´ÎÊäÈë¼¯×°ÏäµÄÖØÁ¿£º"<<endl;
+	cout<<"è¯·ä¾æ¬¡è¾“å…¥é›†è£…ç®±çš„é‡é‡ï¼š"<<endl;
 	for(i=0;i<n;i++){
-		cin>>W[i];
+	    cin>>W[i];
 	}
 	
 	MergeSort(W,0,n-1);
 	while(1){
-		if(t+W[j]>C){
-			break;
-		}
-		t+=W[j];
-		j++;
+	    if(t+W[j]>C){
+		break;
+	    }
+	    t+=W[j];
+	    j++;
 	}
-	cout<<endl<<"ÂÖ´¬×î¶à×°"<<j<<"¸ö¼¯×°Ïä£¬ÖØÁ¿·Ö±ğÎª£º"<<endl;
+	cout<<endl<<"è½®èˆ¹æœ€å¤šè£…"<<j<<"ä¸ªé›†è£…ç®±ï¼Œé‡é‡åˆ†åˆ«ä¸ºï¼š"<<endl;
 	for(i=0;i<j;i++){
-		cout<<W[i]<<" "; 
+	    cout<<W[i]<<" "; 
 	}
 	cout<<endl;
 	return 0;
