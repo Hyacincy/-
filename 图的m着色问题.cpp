@@ -6,41 +6,41 @@ bool isColor(int k ,int c[][100]){
     int i,j;
     for(i=1;i<k;i++){
     	if(c[k][i]==1 && color[i]==color[k]){
-    		return false;
-		}
-        return true;
+    	    return false;
 	}
+        return true;
+    }
 }
 
 void drawColor(int n,int m,int c[][100]){
     int i,k;
     for(i=1;i<=n;i++){
     	color[i]=0;
-	}
+    }
     k=1;
     while(k>=1){
         color[k]=color[k]+1;
         while(color[k]<=m){
-        	if(isColor(k,c)){
-        		break;
-			}
+            if(isColor(k,c)){
+         	break;
+	    }
             else{
             	color[k]=color[k]+1;
-			}
-		}
+	    }
+	}
 
         if(color[k]<=m && k==n){
             for(i=1;i<=n;i++){
             	printf("%d ",color[i]);
-			}
+	    }
             printf("\n");
         }
         else if(color[k]<=m && k<n){
         	k=k+1;  
-		}
+	}
         else{
             color[k]=0;
-        	k=k-1;
+            k=k-1;
         }
     }
 }
@@ -49,17 +49,17 @@ int main(){
     int i,j,n,m;
     int c[100][100];
     
-    printf("ÊäÈë¶¥µãÊýnºÍ×ÅÉ«Êým:\n");
+    printf("è¾“å…¥é¡¶ç‚¹æ•°nå’Œç€è‰²æ•°m:\n");
     scanf("%d %d",&n,&m);
     
-    printf("ÊäÈëÎÞÏòÍ¼µÄÁÚ½Ó¾ØÕó:\n");
+    printf("è¾“å…¥æ— å‘å›¾çš„é‚»æŽ¥çŸ©é˜µ:\n");
     for(i=1;i<=n;i++){
     	for(j=1;j<=n;j++){
-    		scanf("%d",&c[i][j]);
-		} 
-	}
+    	    scanf("%d",&c[i][j]);
+	} 
+    }
         
-    printf("\nËùÓÐ¿ÉÄÜµÄ×ÅÉ«·½°¸:\n");
+    printf("\næ‰€æœ‰å¯èƒ½çš„ç€è‰²æ–¹æ¡ˆ:\n");
     drawColor(n,m,c);
     
     return 0; 
