@@ -7,39 +7,39 @@ int main(){
 	int n,sum,i,j,middle,answer,Ta,Tb;
 	int a[100],f[100][100];
 	
-	cout<<"ÇëÊäÈë¹²ÓĞ¼¸¸ö¼Ó¹¤ÈÎÎñ£¨ÊäÈë0½áÊø£©£º";
+	cout<<"è¯·è¾“å…¥å…±æœ‰å‡ ä¸ªåŠ å·¥ä»»åŠ¡ï¼ˆè¾“å…¥0ç»“æŸï¼‰ï¼š";
 	cin>>n;
-    while(n){
-    	sum=0;
-    	answer=100000000;
+   	while(n){
+    		sum=0;
+    		answer=100000000;
     	
-    	cout<<"ÇëÊäÈëÃ¿¸öÈÎÎñµÄ¼Ó¹¤Ê±¼ä£º"<<endl;
-    	for(i=1;i<=n;i++){
-    		cin>>a[i];
-            sum+=a[i];
-        }
-        middle=sum/2;
-        for(i=1;i<=n;i++){
-        	for(j=1;j<=middle;j++){
-        		if(j>=a[i]){
-        			f[i][j]=f[i-1][j]>f[i-1][j-a[i]]+a[i]?f[i-1][j]:f[i-1][j-a[i]]+a[i];
+    		cout<<"è¯·è¾“å…¥æ¯ä¸ªä»»åŠ¡çš„åŠ å·¥æ—¶é—´ï¼š"<<endl;
+    		for(i=1;i<=n;i++){
+    			cin>>a[i];
+           		sum+=a[i];
+        	}
+       		middle=sum/2;
+        	for(i=1;i<=n;i++){
+        		for(j=1;j<=middle;j++){
+        			if(j>=a[i]){
+        				f[i][j]=f[i-1][j]>f[i-1][j-a[i]]+a[i]?f[i-1][j]:f[i-1][j-a[i]]+a[i];
 				}
-            	else{
-            		f[i][j]=f[i-1][j];
+            			else{
+            				f[i][j]=f[i-1][j];
 				}
 				cout<<f[i][j]<<" "; 
 			}
 			cout<<endl;
-    	}
-    	Ta=f[n][middle];
-    	Tb=sum-f[n][middle];
-    	answer=Ta>Tb?Ta:Tb;
+    		}
+    		Ta=f[n][middle];
+    		Tb=sum-f[n][middle];
+    		answer=Ta>Tb?Ta:Tb;
      
-		cout<<endl<<"×îÓÅ·½°¸£º¼Ó¹¤Ê±¼ä×î¶ÌÎª£º"<<answer<<endl;
-		cout<<"¸Ã·½°¸ÏÂ»úÆ÷AµÄ¼Ó¹¤Ê±¼äÎª£º"<<Ta<<",»úÆ÷BµÄ¼Ó¹¤Ê±¼äÎª£º"<<Tb<<endl;
-        cout<<endl<<"ÇëÊäÈë¹²ÓĞ¼¸¸ö¼Ó¹¤ÈÎÎñ£¨ÊäÈë0½áÊø£©£º";
-        cin>>n;
-    }
+		cout<<endl<<"æœ€ä¼˜æ–¹æ¡ˆï¼šåŠ å·¥æ—¶é—´æœ€çŸ­ä¸ºï¼š"<<answer<<endl;
+		cout<<"è¯¥æ–¹æ¡ˆä¸‹æœºå™¨Açš„åŠ å·¥æ—¶é—´ä¸ºï¼š"<<Ta<<",æœºå™¨Bçš„åŠ å·¥æ—¶é—´ä¸ºï¼š"<<Tb<<endl;
+        	cout<<endl<<"è¯·è¾“å…¥å…±æœ‰å‡ ä¸ªåŠ å·¥ä»»åŠ¡ï¼ˆè¾“å…¥0ç»“æŸï¼‰ï¼š";
+        	cin>>n;
+    	}
     return 0;
 }
 
