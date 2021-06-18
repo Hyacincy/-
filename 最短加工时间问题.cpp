@@ -40,6 +40,6 @@ int main(){
         	cout<<endl<<"请输入共有几个加工任务（输入0结束）：";
         	cin>>n;
     	}
-    return 0;
+    	return 0;
 }
 
